@@ -1,3 +1,3 @@
 module.exports = {
-  extends: "@bd-dm/eslint-config-react",
+	extends: "@bd-dm/eslint-config-react",
 };
