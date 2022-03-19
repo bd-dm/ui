@@ -6,10 +6,12 @@
   "license": "ISC",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "types": "dist/index.d.ts",
+	"repository": "https://github.com/bd-dm/ui",
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/bd-dm"
+	},
   "scripts": {
     "build": "rollup -c",
 		"lint": "eslint .",
