@@ -15,7 +15,10 @@
   "scripts": {
     "build": "rollup -c",
 		"lint": "eslint .",
-		"lint-fix": "eslint . --fix"
+		"lint-fix": "eslint . --fix",
+		"prepublishOnly" : "npm run lint",
+		"preversion" : "npm run lint",
+		"prepare" : "npm run build"
   },
   "devDependencies": {
     "@bd-dm/eslint-config-react": "^0.0.4",
