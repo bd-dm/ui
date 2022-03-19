@@ -11,7 +11,9 @@
   ],
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+		"lint": "eslint .",
+		"lint-fix": "eslint . --fix"
   },
   "devDependencies": {
     "@bd-dm/eslint-config-react": "^0.0.4",
