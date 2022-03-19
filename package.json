@@ -1,6 +1,6 @@
 {
   "name": "@bd-dm/ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Minimalistic react UI library",
   "author": "Dmitry Bardyshev",
   "license": "ISC",
@@ -40,6 +40,6 @@
   },
   "peerDependencies": {
     "react": ">=17",
-		"sass": ">=1.49"
-	}
+    "sass": ">=1.49"
+  }
 }
