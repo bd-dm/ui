@@ -1,0 +1,25 @@
+@use 'src/styles/variables';
+@use 'src/styles/functions';
+@use 'src/styles/mixins';
+
+.errors {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: functions.grid(2);
+	bottom: 50px;
+	left: 0;
+	right: 0;
+}
+
+.error {
+	padding: functions.grid(4) functions.grid(6);
+	border-radius: functions.grid(2);
+	max-width: 600px;
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	@include mixins.themed('background-color', 'accent');
+	@include mixins.themed('color', 'accent-opposite');
+}

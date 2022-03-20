@@ -1,0 +1,59 @@
+@use 'src/styles/variables';
+@use 'src/styles/functions';
+@use 'src/styles/mixins';
+
+$border-radius: functions.grid(1);
+
+.backdrop {
+	position: fixed;
+	inset: 0;
+	@include mixins.themed('background-color', 'accent', 0.3);
+}
+
+.modal {
+	position: absolute;
+	inset: functions.grid(4);
+	max-width: 600px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	position: relative;
+	padding: functions.grid(4);
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+	@include mixins.themed('background-color', 'accent');
+	@include mixins.themed('color', 'accent-opposite');
+
+	&CloseButton {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: functions.grid(10);
+		bottom: 0;
+		transition: background-color 300ms;
+		border-top-right-radius: $border-radius;
+
+		&:hover {
+			@include mixins.themed('background-color', 'accent-hovered');
+		}
+	}
+
+	&Icon {
+		font-size: 15px;
+		@include mixins.themed('color', 'accent-opposite');
+	}
+}
+
+.body {
+	overflow-y: auto;
+	border-bottom-left-radius: $border-radius;
+	border-bottom-right-radius: $border-radius;
+	@include mixins.themed('background-color', 'accent-opposite');
+
+	&WithPadding {
+		padding: functions.grid(4);
+	}
+}

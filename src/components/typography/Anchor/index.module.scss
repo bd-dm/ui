@@ -1,0 +1,24 @@
+@use 'src/styles/functions';
+@use 'src/styles/variables';
+@use 'src/styles/mixins';
+
+.anchor {
+	cursor: pointer;
+	position: relative;
+
+	&::after {
+		position: absolute;
+		content: ' ';
+		height: 2px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transition: height 200ms;
+		will-change: height;
+		@include mixins.themed('background-color', 'accent');
+	}
+
+	&:hover::after {
+		height: 4px;
+	}
+}

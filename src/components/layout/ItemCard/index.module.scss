@@ -1,0 +1,44 @@
+@use 'src/styles/variables';
+@use 'src/styles/functions';
+@use 'src/styles/mixins';
+
+.itemCard {
+	display: block;
+	position: relative;
+	border-radius: functions.grid(1);
+	padding: functions.grid(4) functions.grid(6);
+	transition: background 300ms;
+	z-index: 1;
+
+	@include mixins.forTheme('light') {
+		background: linear-gradient(90deg, rgba(functions.getColor('accent-light', 'light'), 0.5) 0%, functions.getColor('accent-opposite', 'light') 100%);
+	}
+
+	@include mixins.forTheme('dark') {
+		background: linear-gradient(90deg, rgba(functions.getColor('accent-light', 'dark'), 0.5) 0%, functions.getColor('accent-opposite', 'dark') 100%);
+	}
+
+	&::before {
+		content: ' ';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		opacity: 0;
+		transition: opacity 500ms;
+
+		@include mixins.forTheme('light') {
+			background: linear-gradient(90deg, rgba(functions.getColor('accent-light', 'light'), 0.5) 0%, functions.getColor('accent-opposite', 'light') 150%);
+		}
+
+		@include mixins.forTheme('dark') {
+			background: linear-gradient(90deg, rgba(functions.getColor('accent-light', 'dark'), 0.5) 0%, functions.getColor('accent-opposite', 'dark') 150%);
+		}
+	}
+
+	&:hover::before {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,32 @@
+@use 'src/styles/variables';
+@use 'src/styles/functions';
+@use 'src/styles/mixins';
+
+.row {
+	gap: functions.grid(2);
+}
+
+.item {
+	cursor: pointer;
+	padding: functions.grid(3);
+	flex: 1;
+	min-width: functions.grid(20);
+	text-align: center;
+	transition: background-color 300ms, color 300ms;
+	border-radius: functions.grid(1);
+	@include mixins.themed('background-color', 'accent-light');
+
+	&:hover {
+		@include mixins.themed('background-color', 'accent-hovered');
+		@include mixins.themed('color', 'accent-opposite');
+	}
+}
+
+.input {
+	display: none;
+
+	&:checked + .item {
+		@include mixins.themed('background-color', 'accent-hovered');
+		@include mixins.themed('color', 'accent-opposite');
+	}
+}

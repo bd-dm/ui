@@ -1,0 +1,21 @@
+@use 'src/styles/variables';
+@use 'src/styles/functions';
+@use 'src/styles/mixins';
+
+.tabs {
+}
+
+.item {
+	flex: 1;
+	padding: functions.grid(3) functions.grid(2);
+	border-bottom: 2px solid transparent;
+	@include mixins.themed('background-color', 'accent-opposite');
+
+	&:hover {
+		@include mixins.themed('background-color', 'accent-light');
+	}
+
+	&.chosen {
+		@include mixins.themed('border-color', 'accent');
+	}
+}

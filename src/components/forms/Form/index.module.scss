@@ -1,0 +1,19 @@
+@use 'src/styles/variables';
+@use 'src/styles/functions';
+@use 'src/styles/mixins';
+
+.form {
+	width: 100%;
+
+	&Column {
+		gap: functions.grid(2);
+	}
+
+	&Row {
+		gap: functions.grid(2);
+	}
+}
+
+.error {
+	@include mixins.themed('color', 'error');
+}

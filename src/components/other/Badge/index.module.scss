@@ -1,0 +1,13 @@
+@use 'src/styles/variables';
+@use 'src/styles/functions';
+@use 'src/styles/mixins';
+
+.badge {
+	display: inline;
+	font-size: 0.8em;
+	@include mixins.themed('background-color', 'accent');
+	@include mixins.themed('color', 'accent-opposite');
+	padding: functions.grid(1) functions.grid(1.5);
+	border-radius: functions.grid(1.5);
+	aspect-ratio: 1;
+}
