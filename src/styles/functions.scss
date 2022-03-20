@@ -1,0 +1,9 @@
+@use 'src/styles/variables';
+
+@function grid($steps) {
+	@return $steps * variables.$grid-size;
+}
+
+@function getColor($color, $theme: 'dark') {
+	@return map-get(map-get(variables.$themes, $theme), $color);
+}

@@ -1,0 +1,8 @@
+@use 'src/styles/mixins';
+
+.icon {
+	width: 1em;
+	height: 1em;
+
+	@include mixins.themed('stroke', 'accent');
+}

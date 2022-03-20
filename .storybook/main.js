@@ -1,3 +1,5 @@
+const { default: tsconfigPaths } = require("vite-tsconfig-paths");
+
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
@@ -15,6 +17,7 @@ module.exports = {
 	async viteFinal(config) {
 		return {
 			...config,
+			plugins: [tsconfigPaths(), ...config.plugins],
 			define: {
 				...config.define,
 				global: "window",

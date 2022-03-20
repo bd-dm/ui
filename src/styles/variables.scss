@@ -1,0 +1,30 @@
+$themes: (
+	light: (
+		accent: #000000,
+		accent-hovered: #262626,
+		accent-disabled: #696969,
+		accent-light: #f1f1f1,
+		accent-opposite: #ffffff,
+
+		success: #383838,
+		error: #9f9f9f,
+
+		font: #000000,
+		font-secondary: #7a7a7a
+	),
+	dark: (
+		accent: #ffffff,
+		accent-hovered: #eaeaea,
+		accent-disabled: #ababab,
+		accent-light: #171717,
+		accent-opposite: #202023,
+
+		success: #c5c5c5,
+		error: #646464,
+
+		font: #ffffff,
+		font-secondary: #b4b4b4
+	),
+);
+
+$grid-size: 4px;

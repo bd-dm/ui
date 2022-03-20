@@ -1,0 +1,25 @@
+@use 'src/styles/functions';
+@use 'src/styles/variables';
+
+@mixin forTheme($theme) {
+	.theme-#{$theme} & {
+		@content;
+	}
+}
+
+/**
+ * themed - Change color of a css property based on the currently active theme
+ *
+ * @param  {key}     CSS property
+ * @param  {color}   Color name defined in the themes under variables.scss
+ *
+ * @example - @include themed('background', 'color-background');
+ * @returns - background: #FFF;
+ */
+@mixin themed($key, $color, $alpha: 1) {
+	@each $theme-name, $theme-color in variables.$themes {
+		:global(.theme-#{$theme-name}) & {
+			#{$key}: rgba(functions.getColor($color, $theme-name), $alpha)
+		}
+	}
+}
