@@ -2,7 +2,7 @@ interface WithClassName {
 	className?: string;
 }
 
-interface UIComponent<AttributesType, OmittedAttributes extends string>
+interface UIComponent<AttributesType, OmittedAttributes extends string = "">
 	extends WithClassName {
 	elementProps?: Omit<AttributesType, OmittedAttributes>;
 }

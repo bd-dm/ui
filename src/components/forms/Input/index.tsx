@@ -10,8 +10,8 @@ const Input: VFC<InputBaseProps> = ({
 	value,
 	onChange,
 	elementProps,
-	isRequired = false,
-	type = "text",
+	isRequired,
+	type,
 	className,
 }) => {
 	return (
@@ -25,6 +25,11 @@ const Input: VFC<InputBaseProps> = ({
 			{...elementProps}
 		/>
 	);
+};
+
+Input.defaultProps = {
+	isRequired: false,
+	type: "text",
 };
 
 export { Input };

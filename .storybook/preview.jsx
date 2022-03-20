@@ -32,7 +32,7 @@ const parameters = {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
-    },
+    }
   },
 	backgrounds: {
 		default: themes[0].name,

@@ -6,3 +6,7 @@
 
 	@include mixins.themed('stroke', 'accent');
 }
+
+.inversed {
+	@include mixins.themed('stroke', 'accent-opposite');
+}

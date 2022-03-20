@@ -22,12 +22,12 @@ interface ButtonProps
 }
 
 const Button: FC<ButtonProps> = ({
-	isDisabled = false,
-	isLoading = false,
-	isWithoutStyle = false,
+	isDisabled,
+	isLoading,
+	isWithoutStyle,
 	children,
 	onClick,
-	type = "button",
+	type,
 	elementProps,
 	className,
 }) => {
@@ -42,9 +42,20 @@ const Button: FC<ButtonProps> = ({
 			)}
 			{...elementProps}
 		>
-			{isLoading ? <SpinnerIcon className={styles.icon} /> : children}
+			{isLoading ? (
+				<SpinnerIcon className={styles.icon} isInversed />
+			) : (
+				children
+			)}
 		</button>
 	);
+};
+
+Button.defaultProps = {
+	isDisabled: false,
+	isLoading: false,
+	isWithoutStyle: false,
+	type: "button",
 };
 
 export { Button };
