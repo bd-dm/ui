@@ -1,0 +1,15 @@
+@use 'src/styles/variables';
+@use 'src/styles/functions';
+@use 'src/styles/mixins';
+
+.input {
+	border: none;
+	border-radius: functions.grid(1);
+	padding: functions.grid(2) functions.grid(2);
+	@include mixins.themed('background-color', 'accent-light');
+	@include mixins.themed('color', 'accent');
+
+	&::placeholder {
+		@include mixins.themed('color', 'font', 0.7);
+	}
+}
