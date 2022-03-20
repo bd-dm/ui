@@ -3,6 +3,7 @@
 @use 'src/styles/mixins';
 
 .button {
+	font-size: 1em;
 	cursor: pointer;
 	border: none;
 	border-radius: functions.grid(1);

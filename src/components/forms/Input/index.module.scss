@@ -3,6 +3,7 @@
 @use 'src/styles/mixins';
 
 .input {
+	font-size: 1em;
 	border: none;
 	border-radius: functions.grid(1);
 	padding: functions.grid(2) functions.grid(2);

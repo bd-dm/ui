@@ -1,6 +1,10 @@
+@use 'src/styles/mixins';
+
 .font {
 	font-family: Roboto, sans-serif;
 	font-weight: 400;
+
+	@include mixins.themed('color', 'accent');
 }
 
 .type {

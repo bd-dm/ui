@@ -48,3 +48,4 @@ Form.Error = Error;
 Form.Row = Row;
 
 export { Form };
+export type { FormInterface };
