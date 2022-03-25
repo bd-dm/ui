@@ -1,7 +1,7 @@
 import { createContext, FC, useContext, useMemo } from "react";
 import isUndefined from "lodash/isUndefined";
 import { UITheme, WithClassName } from "types";
-import classNames from "classnames";
+import { Layout } from "components/_general/Layout";
 
 interface UIContextType {
 	theme: UITheme;
@@ -13,7 +13,7 @@ const UIContext = createContext<Partial<UIContextType>>({});
 
 type UIContextProviderProps = Partial<UIContextType> & WithClassName;
 
-const UIContextProvider: FC<UIContextProviderProps> = ({
+const UI: FC<UIContextProviderProps> = ({
 	children,
 	theme = DEFAULT_THEME,
 	className,
@@ -27,7 +27,7 @@ const UIContextProvider: FC<UIContextProviderProps> = ({
 
 	return (
 		<UIContext.Provider value={value}>
-			<div className={classNames(className, `theme-${theme}`)}>{children}</div>
+			<Layout className={className}>{children}</Layout>
 		</UIContext.Provider>
 	);
 };
@@ -42,4 +42,4 @@ const useUI = (): UIContextType => {
 	return { theme };
 };
 
-export { UIContextProvider, useUI };
+export { UI, useUI };

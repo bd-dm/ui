@@ -1,4 +1,4 @@
-import { UIContextProvider } from "../src/components/_general/UIContext";
+import { UI } from "../src/components/_general";
 import { UITheme } from "../src/types";
 
 const themes = [
@@ -20,9 +20,9 @@ const themeDecorator = (Story, context) => {
 	const currentTheme = getThemeByColor(context.globals.backgrounds?.value || "");
 
 	return (
-		<UIContextProvider theme={currentTheme}>
+		<UI theme={currentTheme}>
 			<Story />
-		</UIContextProvider>
+		</UI>
 	);
 };
 

@@ -1,0 +1,14 @@
+@use 'src/styles/variables';
+@use 'src/styles/functions';
+@use 'src/styles/mixins';
+
+.app {
+	height: 100%;
+	width: 100%;
+	@include mixins.themed('background-color', 'accent-opposite');
+	@include mixins.themed('color', 'font');
+
+	& * {
+		@include mixins.themed('outline-color', 'accent');
+	}
+}
