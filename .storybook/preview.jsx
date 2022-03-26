@@ -1,5 +1,6 @@
 import { UI, Layout } from "../src/components/_general";
 import { UITheme } from "../src/types";
+import "../src/styles/globals.css";
 
 const themes = [
 	{
