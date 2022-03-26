@@ -1,0 +1,9 @@
+@use 'src/styles/variables';
+@use 'src/styles/mixins';
+
+.container {
+	@include mixins.body-padding;
+
+	max-width: variables.$container-size;
+	margin: 0 auto;
+}

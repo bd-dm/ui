@@ -23,3 +23,11 @@
 		}
 	}
 }
+
+@mixin body-padding {
+	padding: 0 functions.grid(4);
+}
+
+@mixin body-padding-disable {
+	margin: 0 -1 * functions.grid(4);
+}
