@@ -1,4 +1,4 @@
-import { UI } from "../src/components/_general";
+import { UI, Layout } from "../src/components/_general";
 import { UITheme } from "../src/types";
 
 const themes = [
@@ -21,7 +21,9 @@ const themeDecorator = (Story, context) => {
 
 	return (
 		<UI theme={currentTheme}>
-			<Story />
+			<Layout>
+				<Story />
+			</Layout>
 		</UI>
 	);
 };
