@@ -6,7 +6,6 @@ import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
 import copy from "rollup-plugin-copy";
 import autoprefixer from "autoprefixer";
-import dts from "rollup-plugin-dts";
 
 const packageJson = require("./package.json");
 
@@ -16,11 +15,6 @@ export default [
 		output: [
 			{
 				file: packageJson.main,
-				format: "cjs",
-				sourcemap: true,
-			},
-			{
-				file: packageJson.module,
 				format: "esm",
 				sourcemap: true,
 			},
@@ -42,10 +36,5 @@ export default [
 				],
 			}),
 		],
-	},
-	{
-		input: "dist/esm/types/index.d.ts",
-		output: [{ file: "dist/index.d.ts", format: "esm" }],
-		plugins: [dts()],
 	},
 ];
