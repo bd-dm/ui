@@ -1,7 +1,7 @@
 import { createContext, FC, useContext, useMemo } from "react";
 import isUndefined from "lodash/isUndefined";
-import { UITheme, WithClassName } from "types";
-import { Layout } from "components/_general/Layout";
+import { UITheme } from "types";
+import "styles/globals.css";
 
 interface UIContextType {
 	theme: UITheme;
@@ -11,12 +11,9 @@ const DEFAULT_THEME = UITheme.LIGHT;
 
 const UIContext = createContext<Partial<UIContextType>>({});
 
-type UIContextProviderProps = Partial<UIContextType> & WithClassName;
-
-const UI: FC<UIContextProviderProps> = ({
+const UI: FC<Partial<UIContextType>> = ({
 	children,
 	theme = DEFAULT_THEME,
-	className,
 }) => {
 	const value = useMemo(
 		() => ({
@@ -25,18 +22,14 @@ const UI: FC<UIContextProviderProps> = ({
 		[theme]
 	);
 
-	return (
-		<UIContext.Provider value={value}>
-			<Layout className={className}>{children}</Layout>
-		</UIContext.Provider>
-	);
+	return <UIContext.Provider value={value}>{children}</UIContext.Provider>;
 };
 
 const useUI = (): UIContextType => {
 	const { theme } = useContext(UIContext);
 
 	if (isUndefined(theme)) {
-		throw new Error("Please, wrap your components in <UIContextProvider />");
+		throw new Error("Please, wrap your components in <UI /> component");
 	}
 
 	return { theme };

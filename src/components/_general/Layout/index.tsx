@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { WithClassName } from "types";
 
-import { useUI } from "components/_general";
+import { useUI } from "components/_general/UI";
 import classNames from "classnames";
 import styles from "./index.module.scss";
 
