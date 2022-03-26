@@ -13,7 +13,7 @@
     "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
 		"baseUrl": "./src",
 		"plugins": [{ "transform": "@zerollup/ts-transform-paths" }],
 		"paths": { "*": ["*"] }
