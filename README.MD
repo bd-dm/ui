@@ -13,11 +13,13 @@ import "@bd-dm/ui/dist/globals.css"
 ## Usage
 ```jsx
 import "@bd-dm/ui/dist/index.css";
-import { UI, Layout } from "@bd-dm/ui";
+import { UI, Layout, useDeviceTheme } from "@bd-dm/ui";
 
 const App = () => {
+	const theme = useDeviceTheme();
+
 	return (
-		<UI>
+		<UI theme={theme}>
 			<Layout>
 				[Your components here]
 			</Layout>
