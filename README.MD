@@ -6,8 +6,8 @@ npm i @bd-dm/ui
 
 ## Import css to your app
 ```
-	import "@bd-dm/ui/dist/index.css"
-	import "@bd-dm/ui/dist/globals.css"
+import "@bd-dm/ui/dist/index.css"
+import "@bd-dm/ui/dist/globals.css"
 ```
 
 ## Usage

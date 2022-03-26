@@ -1,7 +1,6 @@
 import { createContext, FC, useContext, useMemo } from "react";
 import isUndefined from "lodash/isUndefined";
 import { UITheme } from "types";
-import "styles/globals.css";
 
 interface UIContextType {
 	theme: UITheme;
