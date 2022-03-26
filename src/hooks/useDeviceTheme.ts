@@ -8,9 +8,11 @@ const useDeviceTheme = () => {
 		setDeviceTheme(isDarkTheme ? UITheme.DARK : UITheme.LIGHT);
 	};
 
-	const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-	isDarkTheme.onchange = (e) => onIsDarkThemeChange(e.matches);
-	onIsDarkThemeChange(isDarkTheme.matches);
+	if (typeof window !== "undefined") {
+		const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+		isDarkTheme.onchange = (e) => onIsDarkThemeChange(e.matches);
+		onIsDarkThemeChange(isDarkTheme.matches);
+	}
 
 	return deviceTheme;
 };
