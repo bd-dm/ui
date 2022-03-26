@@ -8,7 +8,7 @@
   "files": [
     "dist"
   ],
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/bd-dm/ui",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/bd-dm"
