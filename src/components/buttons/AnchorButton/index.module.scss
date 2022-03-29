@@ -1,0 +1,29 @@
+@use 'src/styles/variables';
+@use 'src/styles/functions';
+@use 'src/styles/mixins';
+
+.anchor-button {
+	display: inline-block;
+	font-size: 1em;
+	cursor: pointer;
+	border: none;
+	border-radius: functions.grid(1);
+	padding: functions.grid(3) functions.grid(2);
+	@include mixins.themed('background-color', 'accent');
+	@include mixins.themed('color', 'accent-opposite');
+
+	transition: background-color 300ms;
+
+	&:hover {
+		@include mixins.themed('background-color', 'accent-hovered');
+	}
+
+	&:disabled {
+		@include mixins.themed('background-color', 'accent-disabled');
+	}
+}
+
+.icon {
+	height: 1em * 1.15;
+	padding: 1px;
+}
