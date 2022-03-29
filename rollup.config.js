@@ -36,6 +36,9 @@ export default [
 			copy({
 				targets: [
 					{ src: "src/styles/globals.css", dest: "dist", rename: "index.css" },
+					{ src: "src/styles/functions.scss", dest: "dist/styles" },
+					{ src: "src/styles/variables.scss", dest: "dist/styles" },
+					{ src: "src/styles/mixins.scss", dest: "dist/styles" },
 				],
 			}),
 		],

@@ -1,5 +1,5 @@
-@use 'src/styles/functions';
-@use 'src/styles/variables';
+@use './functions';
+@use './variables';
 
 @mixin forTheme($theme) {
 	.theme-#{$theme} & {
