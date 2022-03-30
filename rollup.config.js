@@ -24,6 +24,7 @@ export default [
 			peerDepsExternal(),
 			postcss({
 				minimize: true,
+				extract: true,
 				use: ["sass"],
 				plugins: [autoprefixer],
 			}),
@@ -35,7 +36,10 @@ export default [
 			terser(),
 			copy({
 				targets: [
-					{ src: "src/styles/globals.css", dest: "dist", rename: "index.css" },
+					{
+						src: "src/styles/globals.css",
+						dest: "dist",
+					},
 					{ src: "src/styles/functions.scss", dest: "dist/styles" },
 					{ src: "src/styles/variables.scss", dest: "dist/styles" },
 					{ src: "src/styles/mixins.scss", dest: "dist/styles" },
