@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"baseUrl": "../src",
+		"paths": { "*": ["*"] },
+		"target": "es5",
+		"lib": ["es5", "dom"],
+		"jsx": "react-jsx",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"types": ["cypress", "@testing-library/cypress", "cypress-real-events"]
+	},
+	"include": ["../**/*.*"]
+}
