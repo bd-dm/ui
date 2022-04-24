@@ -58,4 +58,5 @@ Button.defaultProps = {
 	type: "button",
 };
 
+export type { ButtonProps };
 export { Button };

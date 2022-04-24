@@ -1,4 +1,4 @@
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Button } from ".";
 
@@ -8,10 +8,13 @@ const meta: ComponentMeta<typeof Button> = {
 	args: Button.defaultProps,
 };
 
-const Primary = {
-	args: {
-		children: "Button",
-	},
+const Template: ComponentStory<typeof Button> = (props) => {
+	return <Button {...props} />;
+};
+
+const Primary = Template.bind({});
+Primary.args = {
+	children: "Button",
 };
 
 export default meta;
