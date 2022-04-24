@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Layout, UI } from "components";
 import { UITheme } from "types";
+import "styles/globals.css";
 
 const renderWithTheme = (
 	children: ReactNode,
