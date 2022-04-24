@@ -8,10 +8,12 @@ import { UITheme } from "types";
 import { ComponentProps } from "react";
 import { renderWithTheme } from "../../utils";
 
-const DEFAULT_PROPS = { children: "Button" };
+const DEFAULT_PROPS: Partial<ComponentProps<typeof Button>> = {
+	children: "Button",
+};
 
 const render = (
-	props?: ComponentProps<typeof Button>,
+	props?: Partial<ComponentProps<typeof Button>>,
 	theme: UITheme = UITheme.LIGHT
 ) => {
 	mount(renderWithTheme(<Button {...DEFAULT_PROPS} {...props} />, theme));
