@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import { Layout, UI, UITheme } from "../../src";
+import { Layout, UI } from "components";
+import { UITheme } from "types";
 
 const renderWithTheme = (
 	children: ReactNode,
