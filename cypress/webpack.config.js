@@ -13,9 +13,14 @@ module.exports = {
 				test: /\.tsx?$/,
 				use: [
 					{
-						loader: "ts-loader",
+						loader: "babel-loader",
 						options: {
-							transpileOnly: true,
+							presets: [
+								"@babel/preset-env",
+								["@babel/preset-react", { runtime: "automatic" }],
+								"@babel/preset-typescript",
+							],
+							plugins: ["istanbul"],
 						},
 					},
 				],

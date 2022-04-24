@@ -23,9 +23,12 @@ module.exports = (on, config) => {
 		addMatchImageSnapshotPlugin,
 	} = require("cypress-image-snapshot/plugin");
 	const webpackConfig = require("../webpack.config");
+	require("@cypress/code-coverage/task")(on, config);
 
 	on("dev-server:start", (options) =>
 		startDevServer({ options, webpackConfig })
 	);
 	addMatchImageSnapshotPlugin(on, config);
+
+	return config;
 };
