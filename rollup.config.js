@@ -7,6 +7,7 @@ import copy from "rollup-plugin-copy";
 import autoprefixer from "autoprefixer";
 import ttypescript from "ttypescript";
 import tsPlugin from "rollup-plugin-typescript2";
+import { getBabelOutputPlugin } from "@rollup/plugin-babel";
 
 const packageJson = require("./package.json");
 
@@ -32,6 +33,9 @@ export default [
 			commonjs(),
 			tsPlugin({
 				typescript: ttypescript,
+			}),
+			getBabelOutputPlugin({
+				presets: ["@babel/preset-env"],
 			}),
 			terser(),
 			copy({
