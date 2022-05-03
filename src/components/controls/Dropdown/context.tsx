@@ -1,14 +1,17 @@
 import { createContext, FC, useContext, useMemo, useState } from "react";
 import noop from "lodash/noop";
+import { nanoid } from "nanoid";
 
 interface DropdownContextType {
 	isActive: boolean;
 	toggleIsActive: () => void;
+	buttonId: string;
 }
 
 const dropdownContextDefaultValue: DropdownContextType = {
 	isActive: false,
 	toggleIsActive: noop,
+	buttonId: "",
 };
 
 const DropdownContext = createContext<DropdownContextType>(
@@ -20,11 +23,12 @@ const DropdownContextProvider: FC = ({ children }) => {
 		dropdownContextDefaultValue.isActive
 	);
 
+	const buttonId = useMemo(() => nanoid(), []);
 	const toggleIsActive = () => setIsActive((prevState) => !prevState);
 
 	const value = useMemo(
-		() => ({ isActive, toggleIsActive }),
-		[isActive, toggleIsActive]
+		() => ({ isActive, toggleIsActive, buttonId }),
+		[isActive, toggleIsActive, buttonId]
 	);
 
 	return (
@@ -35,9 +39,9 @@ const DropdownContextProvider: FC = ({ children }) => {
 };
 
 const useDropdown = (): DropdownContextType => {
-	const { isActive, toggleIsActive } = useContext(DropdownContext);
+	const { isActive, toggleIsActive, buttonId } = useContext(DropdownContext);
 
-	return { isActive, toggleIsActive };
+	return { isActive, toggleIsActive, buttonId };
 };
 
 export { DropdownContextProvider, useDropdown };

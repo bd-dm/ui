@@ -16,10 +16,11 @@ interface ListProps {
 }
 
 const List: VFC<ListProps> = ({ items, position }) => {
-	const { isActive } = useDropdown();
+	const { isActive, buttonId } = useDropdown();
 
 	return (
 		<ul
+			aria-labelledby={buttonId}
 			className={classNames(styles.list, {
 				[styles.active]: isActive,
 				[styles.right]: position === DropdownListPosition.RIGHT,
