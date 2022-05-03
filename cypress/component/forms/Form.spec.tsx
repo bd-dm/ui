@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 /// <reference types="@testing-library/cypress" />
-/// <reference types="cypress-image-snapshot" />
 
 import { mount } from "@cypress/react";
 import { Form } from "components";
@@ -32,12 +31,12 @@ describe("Form", () => {
 		render();
 		const form = getForm();
 
-		form.matchImageSnapshot();
+		// TODO: match snapshot
 	});
 	it("Renders: dark theme", () => {
 		render({}, UITheme.DARK);
 		const form = getForm();
 
-		form.matchImageSnapshot();
+		// TODO: match snapshot
 	});
 });

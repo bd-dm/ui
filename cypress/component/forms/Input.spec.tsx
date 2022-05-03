@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 /// <reference types="@testing-library/cypress" />
-/// <reference types="cypress-image-snapshot" />
 
 import { mount } from "@cypress/react";
 import { Input } from "components";
@@ -34,7 +33,7 @@ describe("Input", () => {
 
 		input.should("have.attr", "placeholder", "Placeholder");
 
-		input.matchImageSnapshot();
+		// TODO: match snapshot
 	});
 
 	it("Renders: dark theme", () => {
@@ -43,7 +42,7 @@ describe("Input", () => {
 
 		input.should("have.attr", "placeholder", "Placeholder");
 
-		input.matchImageSnapshot();
+		// TODO: match snapshot
 	});
 
 	it("Focuses", () => {
@@ -51,7 +50,7 @@ describe("Input", () => {
 		const input = getInput();
 
 		input.realClick().then(() => {
-			input.matchImageSnapshot();
+			// TODO: match snapshot
 		});
 	});
 
@@ -61,6 +60,6 @@ describe("Input", () => {
 
 		input.type("Text").blur().should("have.value", "Text");
 
-		input.matchImageSnapshot();
+		// TODO: match snapshot
 	});
 });

@@ -1,4 +1,5 @@
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
 	mode: "development",
@@ -6,7 +7,18 @@ module.exports = {
 	resolve: {
 		extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"],
 		plugins: [new TsconfigPathsPlugin({ configFile: "tsconfig.json" })],
+		fallback: {
+			crypto: require.resolve("crypto-browserify"),
+			stream: require.resolve("stream-browserify"),
+			path: require.resolve("path-browserify"),
+		},
 	},
+	plugins: [
+		new webpack.ProvidePlugin({
+			process: "process/browser",
+			Buffer: ["buffer", "Buffer"],
+		}),
+	],
 	module: {
 		rules: [
 			{

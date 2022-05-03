@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 /// <reference types="@testing-library/cypress" />
-/// <reference types="cypress-image-snapshot" />
 
 import { mount } from "@cypress/react";
 import { Button } from "components";
@@ -21,27 +20,29 @@ const render = (
 };
 
 const getButton = () => cy.findByRole("button");
+
 describe("Button", () => {
 	it("Renders: children", () => {
 		render({ children: "Button" });
 		const button = getButton();
 
 		button.should("have.text", "Button");
-		button.matchImageSnapshot();
+
+		// TODO: match snapshot
 	});
 
 	it("Renders: light theme", () => {
 		render({}, UITheme.LIGHT);
 		const button = getButton();
 
-		button.matchImageSnapshot();
+		// TODO: match snapshot
 	});
 
 	it("Renders: dark theme", () => {
 		render({}, UITheme.DARK);
 		const button = getButton();
 
-		button.matchImageSnapshot();
+		// TODO: match snapshot
 	});
 
 	it("Fires callback on click", () => {
