@@ -1,0 +1,48 @@
+@use 'src/styles/mixins';
+@use 'src/styles/functions';
+
+.list {
+	display: none;
+	position: absolute;
+	min-width: functions.grid(30);
+	max-width: functions.grid(60);
+	border-radius: functions.grid(1);
+	overflow: hidden;
+
+	li {
+		padding: functions.grid(2) functions.grid(4);
+		cursor: pointer;
+		transition: background-color 300ms;
+
+		@include mixins.themed('color', 'accent');
+		@include mixins.themed('background-color', 'accent-light');
+
+		&:hover {
+			@include mixins.themed('background-color', 'accent-light-hovered');
+		}
+	}
+}
+
+.active {
+	display: block;
+
+	&.left {
+		border-top-left-radius: 0;
+	}
+
+	&.right {
+		border-top-right-radius: 0;
+	}
+}
+
+.right {
+	right: 0;
+}
+
+.left {
+	left: 0;
+}
+
+.button {
+	font-size: 1em;
+}

@@ -1,5 +1,6 @@
 export * from "./_general";
 export * from "./buttons";
+export * from "./controls";
 export * from "./forms";
 export * from "./icons";
 export * from "./layout";

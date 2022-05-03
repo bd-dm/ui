@@ -1,0 +1,16 @@
+@use 'src/styles/mixins';
+@use 'src/styles/functions';
+
+.button {
+	padding: functions.grid(2) functions.grid(4);
+	border-radius: functions.grid(1);
+
+	&:hover, &.active {
+		@include mixins.themed('background-color', 'accent-light');
+	}
+
+	&.active {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
