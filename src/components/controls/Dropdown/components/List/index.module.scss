@@ -10,8 +10,6 @@
 	overflow: hidden;
 
 	li {
-		padding: functions.grid(2) functions.grid(4);
-		cursor: pointer;
 		transition: background-color 300ms;
 
 		@include mixins.themed('color', 'accent');
@@ -21,6 +19,13 @@
 			@include mixins.themed('background-color', 'accent-light-hovered');
 		}
 	}
+}
+
+.button {
+	padding: functions.grid(2) functions.grid(4);
+	cursor: pointer;
+	width: 100%;
+	text-align: left;
 }
 
 .active {
