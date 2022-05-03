@@ -18,4 +18,5 @@
 		"plugins": [{ "transform": "@zerollup/ts-transform-paths" }],
 		"paths": { "*": ["*"] }
 	},
+	"exclude": ["cypress"]
 }
