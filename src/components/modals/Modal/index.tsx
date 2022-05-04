@@ -11,7 +11,12 @@ interface ModalInterface extends FC<ModalOptions> {
 	Body: typeof Body;
 }
 
-const Modal: ModalInterface = ({ children, isOpened, closeHandler }) => {
+const Modal: ModalInterface = ({
+	children,
+	isOpened,
+	closeHandler,
+	backdropClassName,
+}) => {
 	const id = nanoid();
 
 	return (
@@ -20,7 +25,7 @@ const Modal: ModalInterface = ({ children, isOpened, closeHandler }) => {
 			isOpened={isOpened}
 			closeHandler={closeHandler}
 		>
-			<Container>{children}</Container>
+			<Container backdropClassName={backdropClassName}>{children}</Container>
 		</ModalContextProvider>
 	);
 };
@@ -29,4 +34,5 @@ Modal.Header = Header;
 Modal.Body = Body;
 
 export { Modal };
+export type { ModalInterface };
 export * from "./hooks";

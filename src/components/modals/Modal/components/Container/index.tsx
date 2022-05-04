@@ -4,7 +4,11 @@ import { useModal } from "../../context";
 import styles from "../../index.module.scss";
 import { Backdrop } from "../Backdrop";
 
-const Container: FC = ({ children }) => {
+interface ContainerProps {
+	backdropClassName?: string;
+}
+
+const Container: FC<ContainerProps> = ({ children, backdropClassName }) => {
 	const { id, isOpened } = useModal();
 
 	if (!isOpened) {
@@ -12,7 +16,7 @@ const Container: FC = ({ children }) => {
 	}
 
 	return (
-		<Backdrop>
+		<Backdrop className={backdropClassName}>
 			<div role="dialog" id={id} aria-modal="true" className={styles.modal}>
 				{children}
 			</div>
