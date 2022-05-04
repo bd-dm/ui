@@ -18,7 +18,7 @@ const Button: VFC = () => {
 			className={classNames(styles.button, { [styles.active]: isActive })}
 			onClick={toggleIsActive}
 		>
-			<FontAwesomeIcon icon={faEllipsisV} />
+			<FontAwesomeIcon className={styles.icon} icon={faEllipsisV} />
 		</button>
 	);
 };
