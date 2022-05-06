@@ -2,8 +2,10 @@
 @use 'src/styles/functions';
 
 .button {
-	padding: functions.grid(2) functions.grid(4);
+	padding: functions.grid(1) functions.grid(4);
 	border-radius: functions.grid(1);
+	font-size: 1.4em;
+	font-weight: bold;
 
 	&:hover, &.active {
 		@include mixins.themed('background-color', 'accent-light');
@@ -13,8 +15,4 @@
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
 	}
-}
-
-.icon {
-	height: 1.3em;
 }

@@ -1,8 +1,5 @@
 import { FC } from "react";
 
-import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { Row } from "components/layout";
 
 import { useModal } from "../../context";
@@ -24,7 +21,7 @@ const Header: FC = ({ children }) => {
 					onClick={closeHandler}
 					className={styles.headerCloseButton}
 				>
-					<FontAwesomeIcon icon={faTimes} className={styles.headerIcon} />
+					&times;
 				</button>
 			</Row>
 		</header>
