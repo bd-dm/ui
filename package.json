@@ -33,9 +33,6 @@
     "cypress": "cypress open-ct",
     "test": "cypress run-ct"
   },
-  "dependencies": {
-    "sass": ">=1.49"
-  },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
@@ -100,6 +97,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.31.2",
+		"sass": "^1.52.3",
     "sass-loader": "^12.6.0",
     "storybook-builder-vite": "^0.1.21",
     "stream-browserify": "^3.0.0",

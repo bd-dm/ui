@@ -2,6 +2,7 @@
 ## Installation
 ```
 npm i @bd-dm/ui
+npx install-peerdeps @bd-dm/ui
 ```
 
 ## Import css to your app
